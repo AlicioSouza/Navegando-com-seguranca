@@ -1,0 +1,46 @@
+alterando a pagina da web
+Passo 1: Abrir o Repositório no Visual Studio Code
+--------------------------------------------------------
+1. Abra o **Visual Studio Code (VSCode)**.
+2. No menu superior, clique em **File** > **Open Folder** e selecione a pasta do seu projeto (a pasta onde você criou o arquivo `index.html`).
+3. Após abrir a pasta, você poderá ver os arquivos do seu projeto na barra lateral esquerda.
+
+Passo 2: Editar o Código do Site
+--------------------------------------------------------
+1. Localize e abra o arquivo **`index.html`** ou outro arquivo que você deseja editar.
+2. Faça as alterações desejadas no arquivo. Por exemplo:
+   - Para adicionar um novo vídeo do YouTube, basta copiar o código `<iframe>` e colá-lo onde desejar no HTML.
+   - Para mudar o texto, basta alterar o conteúdo entre as tags `<p>`, `<h1>`, `<h2>`, etc.
+   - Se quiser adicionar um novo arquivo CSS, basta criar um novo arquivo com a extensão `.css` e referenciá-lo no HTML.
+
+Passo 3: Salvar as Alterações
+--------------------------------------------------------
+1. Depois de fazer as alterações, **salve os arquivos**.
+   - Clique em **File** > **Save** ou use o atalho **Ctrl + S** (Windows) ou **Cmd + S** (Mac).
+
+Passo 4: Adicionar e Confirmar as Alterações no Git
+--------------------------------------------------------
+1. Abra o terminal do VSCode (se ainda não estiver aberto) indo em **Terminal** > **New Terminal**.
+2. **Adicione as alterações ao Git**:
+   - Execute o comando abaixo para adicionar os arquivos que foram modificados:
+     ```
+     git add .
+     ```
+3. **Faça o commit das alterações**:
+   - Execute o comando abaixo para confirmar as mudanças:
+     ```
+     git commit -m "Mensagem explicativa sobre as alterações feitas"
+     ```
+
+Passo 5: Enviar as Alterações para o GitHub
+--------------------------------------------------------
+1. **Envie as alterações para o GitHub**:
+   - Execute o comando abaixo para enviar os arquivos para o repositório remoto:
+     ```
+     git push origin main
+     ```
+
+Passo 6: Verificar a Atualização no Site
+--------------------------------------------------------
+1. Após o **push** ser realizado, o **GitHub Pages** irá atualizar automaticamente o seu site.
+2. Acesse a URL do seu site no **GitHub Pages**:
