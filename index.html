@@ -46,23 +46,17 @@
         margin: 0;                      /* Remove margens padrão */
         padding: 0;                     /* Remove padding padrão */
 
-       /* Fundo cinza-azulado mais visível */
-        background: linear-gradient(
-            135deg,
-            #dce3ec 0%,
-            #e6ebf2 40%,
-            #dce3ec 100%
-);
+        /* Fundo base cinza-azulado (mais escuro e visível) */
+        background-color: #cfd8e3;
 
-
-        /* Marca d’água em riscas diagonais (linhas suaves) */
+        /* Marca d’água em riscas BRANCAS diagonais */
         background-image:
             repeating-linear-gradient(
                 45deg,
-                rgba(120, 130, 150, 0.08),
-                rgba(120, 130, 150, 0.08) 2px,
+                rgba(255, 255, 255, 0.35),
+                rgba(255, 255, 255, 0.35) 2px,
                 transparent 2px,
-                transparent 12px
+                transparent 14px
             );
         background-repeat: repeat;       /* Repete o padrão no fundo */
         background-size: 240px 240px;    /* Tamanho do padrão */
