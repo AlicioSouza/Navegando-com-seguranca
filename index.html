@@ -264,37 +264,43 @@
         <p>Navegando com segurança - 2025</p> <!-- Nome do site no rodapé -->
     </footer>
 
-    <!-- Seção do contador de visitas (aparece no final da página) -->
+    <!-- SEÇÃO DO CONTADOR DE VISITAS (aparece no final da página) -->
 <section style="text-align: center; margin-top: 30px;">
     <!-- Texto fixo do contador -->
-    <p><strong>Total de visitas nesta página:</strong> <span id="visitCount">carregando...</span></p>
-    <!-- Observação opcional para transparência com o usuário -->
-    <p style="font-size: 12px; color: #666;">Contador baseado em carregamentos de página (page views).</p>
+    <p>
+        <strong>Total de visitas nesta página:</strong>
+        <span id="visitCount">carregando...</span>
+    </p>
 </section>
 
 <script>
-    // Define um "namespace" e uma "key" únicos para o seu contador
-    // Dica: use algo relacionado ao seu usuário + repositório para evitar conflito com outros sites
-    const namespace = "AlicioSouza-Navegando-com-seguranca"; // Identificador do seu site no serviço de contagem
-    const key = "visitas"; // Nome da chave do contador
+    // Define um identificador único do seu site para evitar conflito com outros contadores
+    const namespace = "AlicioSouza-Navegando-com-seguranca"; // Nome do seu projeto/site
+    const key = "visitas"; // Nome do contador (pode manter assim)
 
-    // Monta a URL do CountAPI para incrementar (hit) e retornar o valor atualizado
+    // Monta a URL do CountAPI que incrementa (hit) e devolve o total atualizado
     const url = `https://api.countapi.xyz/hit/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}`;
 
-    // Faz a requisição ao CountAPI e atualiza o número na página
+    // Faz a chamada ao CountAPI
     fetch(url)
         .then((response) => response.json()) // Converte a resposta para JSON
         .then((data) => {
-            // Atualiza o texto do contador com o valor retornado (data.value)
-            document.getElementById("visitCount").textContent = data.value;
+            // Se existir um valor, atualiza o número na tela
+            if (typeof data.value === "number") {
+                document.getElementById("visitCount").textContent = data.value;
+            } else {
+                // Se não vier valor numérico, mostra erro amigável
+                document.getElementById("visitCount").textContent = "indisponível";
+            }
         })
         .catch((error) => {
-            // Se houver erro (ex.: bloqueio de rede), mostra mensagem amigável no lugar do número
-            document.getElementById("visitCount")..textContent = "indisponível";
-            // Exibe o erro no console do navegador para diagnóstico
+            // Se der erro na chamada (bloqueio, rede, etc.), mostra mensagem amigável
+            document.getElementById("visitCount").textContent = "indisponível";
+            // Registra o erro no console para diagnóstico
             console.error("Erro ao carregar contador de visitas:", error);
         });
 </script>
+
 
 </body>
 </html>
