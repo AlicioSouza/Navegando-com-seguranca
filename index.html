@@ -46,19 +46,24 @@
         margin: 0;                      /* Remove margens padrão */
         padding: 0;                     /* Remove padding padrão */
 
-        /* Fundo com gradiente suave */
-       background: linear-gradient(
-    180deg,
-    #e9eef5 0%,
-    #f4f7fb 50%,
-    #e9eef5 100%
+       /* Fundo cinza-azulado mais visível */
+        background: linear-gradient(
+            135deg,
+            #dce3ec 0%,
+            #e6ebf2 40%,
+            #dce3ec 100%
 );
 
 
-        /* Padrão sutil tipo marca d’água usando SVG embutido (sem arquivo externo) */
-        /* O SVG desenha círculos leves repetidos; não distrai e dá acabamento */
+        /* Marca d’água em riscas diagonais (linhas suaves) */
         background-image:
-            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cg fill='none' stroke='%2390a4b8' stroke-opacity='0.14'%3E%3Ccircle cx='40' cy='40' r='18'/%3E%3Ccircle cx='160' cy='80' r='22'/%3E%3Ccircle cx='90' cy='170' r='26'/%3E%3C/g%3E%3C/svg%3E");
+            repeating-linear-gradient(
+                45deg,
+                rgba(120, 130, 150, 0.08),
+                rgba(120, 130, 150, 0.08) 2px,
+                transparent 2px,
+                transparent 12px
+            );
         background-repeat: repeat;       /* Repete o padrão no fundo */
         background-size: 240px 240px;    /* Tamanho do padrão */
     }
