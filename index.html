@@ -104,7 +104,7 @@
        CARDS (seções com borda, sombra e separação clara)
        ========================================================= */
     .card {
-        background: #eef1fa;              /* Azul bem claro com leve tom lilás */
+        background: #e1e5f5;              /* Azul/lilás mais presente */
         border: 1px solid var(--border);  /* Borda suave */
         border-radius: 16px;              /* Cantos arredondados */
         box-shadow: var(--shadow);        /* Sombra */
@@ -506,42 +506,32 @@
         <p>Navegando com segurança - 2025</p> <!-- Nome do site no rodapé -->
     </footer>
 
-    <!-- SEÇÃO DO CONTADOR DE VISITAS (aparece no final da página) -->
-<section style="text-align: center; margin-top: 30px;">
-    <!-- Texto fixo do contador -->
-    <p>
-        <strong>Total de visitas nesta página:</strong>
-        <span id="visitCount">carregando...</span>
+<!-- Seção do contador de visitas (sem JavaScript, sem cadastro) -->
+<section class="card" style="text-align: center;">
+    <!-- Título curto da seção -->
+    <h3>Quantidade de visitas nesta página</h3>
+
+    <!--
+        Contador por imagem (badge):
+        - Cada vez que a página carrega, o serviço incrementa a contagem.
+        - Ideal para GitHub Pages porque não depende de fetch / CORS do navegador.
+        - LEMBRAR DE TROCAR A URL SE POR ACASO EU TROCAR O LINK DA PAGINA OU COLOCAR EM NOVA PAGINA.
+    -->
+    <img
+       src="https://hits.seeyoufarm.com/api/count/incr/badge.svg
+        ?url=https%3A%2F%2Faliciosouza.github.io%2FNavegando-com-seguranca%2F
+        &count_bg=%235C7CFA
+        &title_bg=%234B5563
+        &title=Visitas
+        &edge_flat=false"
+        alt="Contador de visitas do site"
+    />
+
+    <!-- Observação curta (opcional) -->
+    <p style="margin-top: 10px; font-size: 14px;">
+        Contagem baseada em carregamentos da página (page views).
     </p>
 </section>
-
-<script>
-    // Define um identificador único do seu site para evitar conflito com outros contadores
-    const namespace = "AlicioSouza-Navegando-com-seguranca"; // Nome do seu projeto/site
-    const key = "visitas"; // Nome do contador (pode manter assim)
-
-    // Monta a URL do CountAPI que incrementa (hit) e devolve o total atualizado
-    const url = `https://api.countapi.xyz/hit/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}`;
-
-    // Faz a chamada ao CountAPI
-    fetch(url)
-        .then((response) => response.json()) // Converte a resposta para JSON
-        .then((data) => {
-            // Se existir um valor, atualiza o número na tela
-            if (typeof data.value === "number") {
-                document.getElementById("visitCount").textContent = data.value;
-            } else {
-                // Se não vier valor numérico, mostra erro amigável
-                document.getElementById("visitCount").textContent = "indisponível";
-            }
-        })
-        .catch((error) => {
-            // Se der erro na chamada (bloqueio, rede, etc.), mostra mensagem amigável
-            document.getElementById("visitCount").textContent = "indisponível";
-            // Registra o erro no console para diagnóstico
-            console.error("Erro ao carregar contador de visitas:", error);
-        });
-</script>
 
 <!-- Fim do container principal -->
 </div>
