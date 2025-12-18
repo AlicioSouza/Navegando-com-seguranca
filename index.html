@@ -15,7 +15,7 @@
     <meta charset="UTF-8"> <!-- Define a codificação de caracteres para garantir que os caracteres especiais sejam exibidos corretamente -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Torna a página responsiva para dispositivos móveis -->
     <title>Navegando com segurança</title> <!-- Título da página que será exibido na aba do navegador -->
-   <style>
+<style>
     /* =========================================================
        ESTILO GERAL DA PÁGINA
        - Fundo com leve gradiente + padrão "marca d’água" sutil
@@ -216,12 +216,15 @@
 </style>
 </head>
 <body>
+    <!-- Container principal para centralizar e aplicar o layout -->
+    <div class="page">
 
     <!-- Cabeçalho da página -->
     <h1>Assista os videos mais recentes de fraudes na internet</h1>
 
     <!-- Seção de texto explicativo -->
-   <section>
+   <section class="card">
+
         <p>Meu nome é Alicio Rodrigues de Souza e sou estudante do curso de Engenharia da Computação pela Uninter.</p>
         <p>Esta página foi desenvolvida como parte de um projeto acadêmico com o objetivo de orientar pessoas da terceira idade sobre segurança digital, utilizando vídeos explicativos curtos, diretos e de fácil compreensão.</p>
         <p>A proposta do projeto é auxiliar os usuários a identificar e evitar os principais golpes aplicados por criminosos no ambiente digital, especialmente na Internet, promovendo maior consciência, autonomia e segurança no uso de tecnologias digitais.</p>
@@ -232,74 +235,135 @@
     <!-- Seção de vídeos -->
     <div class="video-container">
         <!-- shorts -->    
-        <iframe 
-            src="https://www.youtube.com/embed/oQfTcB-FnAI"
-            title="4 dicas para identificar Golpes financeiros"
-            width="315"
-            height="560"
-            frameborder="0"
-            allowfullscreen>
-        </iframe>
+        <div class="video-item">
+            <div class="video-frame">  
+                <iframe 
+                    src="https://www.youtube.com/embed/oQfTcB-FnAI"
+                    title="4 dicas para identificar Golpes financeiros"
+                    width="315"
+                    height="560"
+                    frameborder="0"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+        
         <!-- video normal inicia no 13s termina no 194s -->
-        <iframe
-            src="https://www.youtube.com/embed/wLxVzF7VC8o?start=13&end=194"
-            title="Como se proteger de Golpes"
-            allowfullscreen>
-        </iframe>
-         <iframe
-            src="https://www.youtube.com/embed/8Oe2bUa3jBU?start=270&end=1531"
-            title="12 Golpes mais aplicados em 2025"
-            allowfullscreen>
-        </iframe>
-        <iframe 
-            src="https://www.youtube.com/embed/fwZzHpoo0m4"
-            title="Golpe do Pix Errado" 
-            allowfullscreen>
-         </iframe>          
-        <iframe
-            src="https://www.youtube.com/embed/fwZzHpoo0m4"
-            title="Golpe do Pix Errado"
-            allowfullscreen>
-        </iframe>        
-        <iframe
-            src="https://www.youtube.com/embed/c8NxH0HxUHM"
-            title="Golpes mais aplicados"
-            allowfullscreen>
-        </iframe>
-        <iframe
-            src="https://www.youtube.com/embed/KljocKjXFo0"
-            title="Morango do amor "
-            allowfullscreen>
-        </iframe>
-        <iframe
-            src="https://www.youtube.com/embed/2-FQ079noao"
-            title="Renda extra"
-            allowfullscreen>
-        </iframe>
-        <iframe
-            src="https://www.youtube.com/embed/kPfbkjtX1ws"
-            title="Falso advogado"
-            allowfullscreen>
-        </iframe>
-        <iframe
-            src="https://www.youtube.com/embed/gLeJJu3-k60"
-            title="INSS"
-            allowfullscreen>
-        </iframe>
-        <iframe
-            src="https://www.youtube.com/embed/hN3k_TE-YYE"
-            title="12 golpes mais aplicados"
-            allowfullscreen>
-        </iframe>
-        <iframe
-            src="https://www.youtube.com/embed/vQngH6Y5OxE"
-            title="boleto fraudado"
-            allowfullscreen>
-        </iframe>
+        <div class="video-item">
+            <div class="video-frame">
+                <iframe
+                    src="https://www.youtube.com/embed/wLxVzF7VC8o?start=13&end=194"
+                    title="Como se proteger de Golpes"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+        
+        <div class="video-item">
+            <div class="video-frame">
+                <iframe
+                    src="https://www.youtube.com/embed/8Oe2bUa3jBU?start=270&end=1531"
+                    title="12 Golpes mais aplicados em 2025"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>   
+        
+        <div class="video-item">
+            <div class="video-frame">
+                <iframe 
+                    src="https://www.youtube.com/embed/fwZzHpoo0m4"
+                    title="Golpe do Pix Errado" 
+                    allowfullscreen>
+                 </iframe>
+            </div>
+        </div>
+        
+        <div class="video-item">
+            <div class="video-frame">
+                <iframe
+                    src="https://www.youtube.com/embed/fwZzHpoo0m4"
+                    title="Golpe do Pix Errado"
+                    allowfullscreen>
+                </iframe>  
+            </div>
+        </div>
+        
+        <div class="video-item">
+            <div class="video-frame">
+                <iframe
+                    src="https://www.youtube.com/embed/c8NxH0HxUHM"
+                    title="Golpes mais aplicados"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+        
+        <div class="video-item">
+            <div class="video-frame">
+                <iframe
+                    src="https://www.youtube.com/embed/KljocKjXFo0"
+                    title="Morango do amor "
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+        
+        <div class="video-item">
+            <div class="video-frame">
+                <iframe
+                    src="https://www.youtube.com/embed/2-FQ079noao"
+                    title="Renda extra"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+        
+        <div class="video-item">
+            <div class="video-frame">
+                <iframe
+                    src="https://www.youtube.com/embed/kPfbkjtX1ws"
+                    title="Falso advogado"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+        
+        <div class="video-item">
+            <div class="video-frame">
+                <iframe
+                    src="https://www.youtube.com/embed/gLeJJu3-k60"
+                    title="INSS"
+                    allowfullscreen>
+                 </iframe>
+            </div>
+        </div>
+        
+        <div class="video-item">
+            <div class="video-frame">
+                <iframe
+                    src="https://www.youtube.com/embed/hN3k_TE-YYE"
+                    title="12 golpes mais aplicados"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+        
+        <div class="video-item">
+            <div class="video-frame">
+                <iframe
+                    src="https://www.youtube.com/embed/vQngH6Y5OxE"
+                    title="boleto fraudado"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+        
     </div>
 
     <!-- Título maior centralizado sobre o antivírus -->
-    <section>
+    <section class="card">
+
         <h2>Por que é importante ter um antivírus no celular Android</h2>
         <p>Com o aumento do uso de smartphones no dia a dia, tanto para atividades pessoais quanto para serviços essenciais, como acesso a bancos e comunicação, a proteção desses dispositivos tornou-se fundamental. No sistema Android, que é o mais utilizado no mundo, o uso de um antivírus contribui diretamente para a segurança das informações armazenadas no aparelho.</p>
         <p>O Android permite a instalação de aplicativos de diferentes fontes, além da loja oficial (Google Play Store). Embora essa característica ofereça maior liberdade ao usuário, ela também aumenta a exposição a riscos, como vírus, programas espiões e outros softwares maliciosos. O antivírus atua prevenindo essas ameaças, realizando monitoramento contínuo e alertando o usuário sobre possíveis perigos.</p>
@@ -308,21 +372,36 @@
     </section>
 
     <!-- Subtítulo centralizado para o tutorial -->
-    <section>
+    <section class="card">
+
         <h3>Tutorial de instalação do antivírus Bitdefender no celular Android</h3>
         <p>Esta seção apresenta um vídeo tutorial com orientações simples e objetivas sobre o processo de instalação do antivírus Bitdefender em dispositivos Android. O objetivo é auxiliar o usuário a realizar a instalação de forma correta, contribuindo para a proteção do aparelho contra ameaças digitais.</p>
         <p>O conteúdo foi elaborado de maneira acessível, permitindo que pessoas da terceira idade acompanhem o passo a passo com facilidade, promovendo maior autonomia e segurança no uso do celular e da Internet.</p>
-    <iframe
-        src="https://www.youtube.com/embed/Yk8nBAcbDVQ?start=54"
-        title="Tutorial de instalação do antivírus Bitdefender no Android"
-        allowfullscreen>
-    </iframe>
-    </section>
-    <h2 style="text-align: center;"> Por Favor, responda a Pesquisa de Segurança Digital para ajudar e melhorar o meu trabalho</h2>
-    <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLSc4EzPRELibxCfOoNSscLtUAIaIeM5b4bT5_Srvqo5KgO9-UA/viewform?usp=dialog" width="640" height="480"
-        frameborder="0" marginheight="0" marginwidth="0">Carregando...
-    </iframe>
+         <!-- SEÇÃO DO VIDEO DO ANTIVIRUS -->
+        <div class="video-item">
+            <div class="video-frame">
+                <iframe
+                    src="https://www.youtube.com/embed/Yk8nBAcbDVQ?start=54"
+                    title="Tutorial de instalação do antivírus Bitdefender"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+         
+<!-- SEÇÃO DA PESQUISA (Google Forms) -->
+<section class="card">
+    <h2 style="text-align: center;">
+        Por favor, responda à Pesquisa de Segurança Digital para ajudar a melhorar este trabalho
+    </h2>
+
+    <!-- Formulário incorporado com borda e sombra -->
+    <div class="embed-wrap">
+        <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSc4EzPRELibxCfOoNSscLtUAIaIeM5b4bT5_Srvqo5KgO9-UA/viewform?usp=dialog"
+            title="Pesquisa de Segurança Digital"
+            loading="lazy">
+        </iframe>
+    </div>
 </section>
 
 <!-- Seção de compartilhamento da página -->
@@ -459,7 +538,8 @@
         });
 </script>
 
-
+<!-- Fim do container principal -->
+</div>
 </body>
 </html>
 
