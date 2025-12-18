@@ -15,47 +15,205 @@
     <meta charset="UTF-8"> <!-- Define a codificação de caracteres para garantir que os caracteres especiais sejam exibidos corretamente -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Torna a página responsiva para dispositivos móveis -->
     <title>Navegando com segurança</title> <!-- Título da página que será exibido na aba do navegador -->
-    <style>
-        body {
-            font-family: Arial, sans-serif; /* Define a fonte padrão da página */
-            margin: 0; /* Remove as margens padrão do navegador */
-            padding: 20px; /* Adiciona um padding para garantir que o conteúdo não fique colado nas bordas */
-            background-color: #f4f4f4; /* Define a cor de fundo da página */
-        }
+   <style>
+    /* =========================================================
+       ESTILO GERAL DA PÁGINA
+       - Fundo com leve gradiente + padrão "marca d’água" sutil
+       - Tipografia legível (bom para terceira idade)
+       ========================================================= */
 
-        h1 {
-            text-align: center; /* Centraliza o título principal */
-            color: #333; /* Cor do texto do título */
-        }
+    :root {
+        /* Paleta de cores (você pode ajustar depois) */
+        --bg-1: #f6f8fb;               /* Fundo principal */
+        --bg-2: #eef2f7;               /* Fundo secundário (gradiente) */
+        --text: #1f2937;               /* Texto principal */
+        --muted: #6b7280;              /* Texto secundário */
+        --card: #ffffff;               /* Fundo dos cards */
+        --border: rgba(31, 41, 55, 0.12); /* Bordas suaves */
+        --shadow: 0 10px 28px rgba(0, 0, 0, 0.08); /* Sombra leve */
+        --primary: #0b5ed7;            /* Cor de destaque */
+    }
 
-        /* Estilo para o container que contém os vídeos */
+    /* Define box-sizing para facilitar controle de larguras */
+    * {
+        box-sizing: border-box; /* Garante que padding/borda não "estourem" largura */
+    }
+
+    body {
+        /* Fonte simples e muito legível */
+        font-family: Arial, sans-serif; /* Fonte padrão */
+        color: var(--text);             /* Cor do texto */
+        margin: 0;                      /* Remove margens padrão */
+        padding: 0;                     /* Remove padding padrão */
+
+        /* Fundo com gradiente suave */
+        background: linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
+
+        /* Padrão sutil tipo marca d’água usando SVG embutido (sem arquivo externo) */
+        /* O SVG desenha círculos leves repetidos; não distrai e dá acabamento */
+        background-image:
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cg fill='none' stroke='%2390a4b8' stroke-opacity='0.14'%3E%3Ccircle cx='40' cy='40' r='18'/%3E%3Ccircle cx='160' cy='80' r='22'/%3E%3Ccircle cx='90' cy='170' r='26'/%3E%3C/g%3E%3C/svg%3E");
+        background-repeat: repeat;       /* Repete o padrão no fundo */
+        background-size: 240px 240px;    /* Tamanho do padrão */
+    }
+
+    /* =========================================================
+       CONTAINER CENTRAL (limita largura e dá "cara" profissional)
+       ========================================================= */
+    .page {
+        max-width: 1100px; /* Largura máxima para não ficar muito esticado */
+        margin: 0 auto;    /* Centraliza o conteúdo na tela */
+        padding: 28px 18px;/* Espaçamento interno geral */
+    }
+
+    /* =========================================================
+       CABEÇALHO
+       ========================================================= */
+    header {
+        /* Card do topo */
+        background: rgba(255, 255, 255, 0.75); /* Transparência leve para ver o fundo */
+        backdrop-filter: blur(6px);            /* Efeito glass (se suportado) */
+        border: 1px solid var(--border);       /* Borda suave */
+        border-radius: 16px;                   /* Cantos arredondados */
+        box-shadow: var(--shadow);             /* Sombra */
+        padding: 18px 18px;                    /* Espaçamento interno */
+        margin-bottom: 18px;                   /* Espaço abaixo */
+    }
+
+    h1 {
+        text-align: center; /* Centraliza o título principal */
+        margin: 6px 0 0;    /* Ajusta espaçamento */
+        font-size: 28px;    /* Tamanho confortável */
+        line-height: 1.25;  /* Altura de linha */
+        color: var(--text); /* Cor principal */
+    }
+
+    .subtitle {
+        text-align: center; /* Centraliza o subtítulo */
+        margin: 10px 0 0;   /* Espaço acima */
+        color: var(--muted);/* Cor mais suave */
+        font-size: 15px;    /* Tamanho menor */
+    }
+
+    /* =========================================================
+       CARDS (seções com borda, sombra e separação clara)
+       ========================================================= */
+    .card {
+        background: var(--card);           /* Fundo branco */
+        border: 1px solid var(--border);   /* Borda suave */
+        border-radius: 16px;               /* Cantos arredondados */
+        box-shadow: var(--shadow);         /* Sombra */
+        padding: 18px;                     /* Espaçamento interno */
+        margin-top: 18px;                  /* Espaço entre cards */
+    }
+
+    .card h2,
+    .card h3 {
+        text-align: center; /* Centraliza títulos */
+        margin: 6px 0 12px; /* Espaçamento */
+        color: var(--text); /* Cor do texto */
+    }
+
+    .card p {
+        margin: 10px 0;     /* Espaçamento entre parágrafos */
+        line-height: 1.6;   /* Melhora leitura */
+        font-size: 16px;    /* Melhor para leitura */
+    }
+
+    /* Linha separadora discreta (opcional dentro de cards) */
+    .divider {
+        height: 1px;                    /* Espessura */
+        background: var(--border);      /* Cor da linha */
+        margin: 16px 0;                 /* Espaçamento */
+    }
+
+    /* =========================================================
+       GRID DE VÍDEOS (2 colunas no PC, 1 no celular)
+       ========================================================= */
+    .video-container {
+        display: grid;                       /* Grid é mais previsível que flex aqui */
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+        gap: 18px;                           /* Espaçamento entre vídeos */
+        margin-top: 12px;                    /* Espaço acima */
+    }
+
+    /* Ajusta para 1 coluna em telas menores */
+    @media (max-width: 900px) {
         .video-container {
-            display: flex; /* Utiliza flexbox para organizar os vídeos */
-            flex-wrap: wrap; /* Faz os vídeos quebrarem para a linha seguinte, se necessário */
-            gap: 20px; /* Espaçamento entre os vídeos */
-            justify-content: center; /* Centraliza os vídeos */
+            grid-template-columns: 1fr; /* 1 coluna em telas pequenas */
         }
+    }
 
-        /* Estilo para cada vídeo */
-        .video-container iframe {
-            border: none; /* Remove a borda do iframe */
-            width: 100%; /* Define a largura como 100% do seu contêiner */
-            max-width: 560px; /* Define uma largura máxima para os vídeos */
-            height: 315px; /* Define a altura fixa dos vídeos */
-        }
+    /* Card individual para cada vídeo (borda + sombra leve) */
+    .video-item {
+        background: rgba(255, 255, 255, 0.9); /* Fundo */
+        border: 1px solid var(--border);      /* Borda */
+        border-radius: 14px;                  /* Cantos arredondados */
+        overflow: hidden;                     /* Corta bordas do iframe */
+        box-shadow: 0 8px 18px rgba(0,0,0,0.07); /* Sombra leve */
+    }
 
-        /* Estilo para os títulos h2 e h3 centralizados */
-        h2, h3 {
-            text-align: center; /* Centraliza os títulos e subtítulos na página */
-            color: #333; /* Cor do texto */
-        }
+    /* Mantém proporção 16:9 do vídeo de forma responsiva */
+    .video-frame {
+        position: relative; /* Base para posicionar o iframe */
+        padding-top: 56.25%;/* 16:9 (9/16 = 56.25%) */
+        width: 100%;        /* Ocupa todo o card */
+    }
 
-        footer {
-            text-align: center; /* Centraliza o rodapé */
-            margin-top: 30px; /* Adiciona um espaçamento superior */
-            font-size: 14px; /* Define o tamanho da fonte */
-        }
-    </style>
+    .video-frame iframe {
+        position: absolute; /* Preenche o container */
+        top: 0;             /* Alinha no topo */
+        left: 0;            /* Alinha à esquerda */
+        width: 100%;        /* Largura total */
+        height: 100%;       /* Altura total */
+        border: 0;          /* Sem borda */
+    }
+
+    /* =========================================================
+       IFRAME DE TUTORIAL / FORMULÁRIO (central e com borda)
+       ========================================================= */
+    .embed-wrap {
+        margin-top: 14px;   /* Espaço acima */
+        border: 1px solid var(--border); /* Borda */
+        border-radius: 14px;/* Cantos */
+        overflow: hidden;   /* Corta borda do iframe */
+        box-shadow: 0 8px 18px rgba(0,0,0,0.07); /* Sombra */
+        background: #fff;   /* Fundo */
+    }
+
+    .embed-wrap iframe {
+        width: 100%;        /* Ocupa toda a largura */
+        height: 520px;      /* Altura padrão (ajuste se quiser) */
+        border: 0;          /* Sem borda */
+    }
+
+    /* =========================================================
+       BOTÕES (se você usar botões de compartilhar, por exemplo)
+       ========================================================= */
+    button {
+        background: var(--primary);  /* Cor de destaque */
+        color: #fff;                 /* Texto branco */
+        border: none;                /* Sem borda padrão */
+        padding: 10px 14px;          /* Tamanho confortável */
+        border-radius: 12px;         /* Arredondado */
+        cursor: pointer;             /* Mãozinha */
+        font-size: 15px;             /* Tamanho */
+    }
+
+    button:hover {
+        filter: brightness(0.95);    /* Efeito leve ao passar o mouse */
+    }
+
+    /* =========================================================
+       RODAPÉ
+       ========================================================= */
+    footer {
+        text-align: center; /* Centraliza o texto */
+        margin: 22px 0 12px;/* Espaçamento */
+        color: var(--muted);/* Cor suave */
+        font-size: 13px;    /* Menor */
+    }
+</style>
 </head>
 <body>
 
