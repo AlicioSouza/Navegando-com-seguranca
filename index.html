@@ -47,7 +47,13 @@
         padding: 0;                     /* Remove padding padrão */
 
         /* Fundo com gradiente suave */
-        background: linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
+       background: linear-gradient(
+    180deg,
+    #e9eef5 0%,
+    #f4f7fb 50%,
+    #e9eef5 100%
+);
+
 
         /* Padrão sutil tipo marca d’água usando SVG embutido (sem arquivo externo) */
         /* O SVG desenha círculos leves repetidos; não distrai e dá acabamento */
@@ -99,12 +105,12 @@
        CARDS (seções com borda, sombra e separação clara)
        ========================================================= */
     .card {
-        background: var(--card);           /* Fundo branco */
-        border: 1px solid var(--border);   /* Borda suave */
-        border-radius: 16px;               /* Cantos arredondados */
-        box-shadow: var(--shadow);         /* Sombra */
-        padding: 18px;                     /* Espaçamento interno */
-        margin-top: 18px;                  /* Espaço entre cards */
+        background: rgba(255, 255, 255, 0.92); /* Fundo branco */
+        border: 1px solid var(--border);       /* Borda suave */
+        border-radius: 16px;                   /* Cantos arredondados */
+        box-shadow: var(--shadow);             /* Sombra */
+        padding: 18px;                         /* Espaçamento interno */
+        margin-top: 18px;                      /* Espaço entre cards */
     }
 
     .card h2,
