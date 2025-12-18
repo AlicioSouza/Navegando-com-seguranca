@@ -104,12 +104,12 @@
        CARDS (seções com borda, sombra e separação clara)
        ========================================================= */
     .card {
-        background: rgba(255, 255, 255, 0.92); /* Fundo branco */
-        border: 1px solid var(--border);       /* Borda suave */
-        border-radius: 16px;                   /* Cantos arredondados */
-        box-shadow: var(--shadow);             /* Sombra */
-        padding: 18px;                         /* Espaçamento interno */
-        margin-top: 18px;                      /* Espaço entre cards */
+        background: #eef1fa;              /* Azul bem claro com leve tom lilás */
+        border: 1px solid var(--border);  /* Borda suave */
+        border-radius: 16px;              /* Cantos arredondados */
+        box-shadow: var(--shadow);        /* Sombra */
+        padding: 18px;                    /* Espaçamento interno */
+        margin-top: 18px;                 /* Espaço entre cards */
     }
 
     .card h2,
@@ -136,10 +136,10 @@
        GRID DE VÍDEOS (2 colunas no PC, 1 no celular)
        ========================================================= */
     .video-container {
-        display: grid;                       /* Grid é mais previsível que flex aqui */
+        display: grid;                         /* Grid é mais previsível que flex aqui */
         grid-template-columns: repeat(2, 1fr); /* 2 colunas */
-        gap: 18px;                           /* Espaçamento entre vídeos */
-        margin-top: 12px;                    /* Espaço acima */
+        gap: 18px;                             /* Espaçamento entre vídeos */
+        margin-top: 12px;                      /* Espaço acima */
     }
 
     /* Ajusta para 1 coluna em telas menores */
@@ -151,10 +151,10 @@
 
     /* Card individual para cada vídeo (borda + sombra leve) */
     .video-item {
-        background: rgba(255, 255, 255, 0.9); /* Fundo */
-        border: 1px solid var(--border);      /* Borda */
-        border-radius: 14px;                  /* Cantos arredondados */
-        overflow: hidden;                     /* Corta bordas do iframe */
+        background: rgba(255, 255, 255, 0.9);    /* Fundo */
+        border: 1px solid var(--border);         /* Borda */
+        border-radius: 14px;                     /* Cantos arredondados */
+        overflow: hidden;                        /* Corta bordas do iframe */
         box-shadow: 0 8px 18px rgba(0,0,0,0.07); /* Sombra leve */
     }
 
