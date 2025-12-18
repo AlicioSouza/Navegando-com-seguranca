@@ -508,26 +508,32 @@
 
 <!-- Seção do contador de visitas (sem JavaScript, sem cadastro) -->
 <section class="card" style="text-align: center;">
-    <!-- Título curto da seção -->
+    <!-- Título da seção -->
     <h3>Quantidade de visitas nesta página</h3>
 
     <!--
         Contador por imagem (badge):
-        - Cada vez que a página carrega, o serviço incrementa a contagem.
-        - Ideal para GitHub Pages porque não depende de fetch / CORS do navegador.
-        - LEMBRAR DE TROCAR A URL SE POR ACASO EU TROCAR O LINK DA PAGINA OU COLOCAR EM NOVA PAGINA.
+        - Cada carregamento da página incrementa a contagem
+        - Ideal para GitHub Pages (não usa JavaScript)
+        - Se mudar o link do site, a URL abaixo deve ser atualizada
     -->
     <img
-       src="https://hits.seeyoufarm.com/api/count/incr/badge.svg
-        ?url=https%3A%2F%2Faliciosouza.github.io%2FNavegando-com-seguranca%2F
-        &count_bg=%235C7CFA
-        &title_bg=%234B5563
-        &title=Visitas
-        &edge_flat=false"
-        alt="Contador de visitas do site"
+        src="
+            https://hitscounter.dev/api/hit
+            ?url=https%3A%2F%2Faliciosouza.github.io%2FNavegando-com-seguranca%2F
+            &label=
+            &icon=github
+            &color=%23198754
+            &message=
+            &style=flat
+            &tz=UTC
+        "
+        alt="Contador de visitas do site Navegando com Segurança"
     />
 
-      </p>
+    <p style="margin-top: 10px; font-size: 14px;">
+        Contagem baseada em carregamentos da página (page views).
+    </p>
 </section>
 
 <!-- Fim do container principal -->
